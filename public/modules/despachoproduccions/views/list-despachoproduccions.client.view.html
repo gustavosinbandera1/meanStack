@@ -1,0 +1,125 @@
+<section data-ng-controller="DespachoproduccionsController as vm" data-ng-init="getClients(true)" >
+    <div class="page-header">
+        <h1>Despachos</h1>
+    </div>
+
+  <div >
+
+    <div class="showHide">
+      <input type="checkbox" ng-model="myCheckView" id="toggle">
+      <label for="toggle">
+        <span class='expand'>
+            <span class="changeArrow arrow-plus glyphicon glyphicon-plus-sign"></span>
+            <span class="changeArrow arrow-minus glyphicon glyphicon-minus-sign"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+
+
+
+   <div class="pull-left btn-group-lg">
+      <a type="button" class="btn btn-success" href="/#!/despachoproduccions/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo Despacho
+      </a>
+    </div>
+
+
+
+
+   <div ng-hide="!myCheckView" class="fieldsetContainer" >
+    <hr style="width:100%; background-color: red;"><br>
+     <div class="col-md-12">
+        <form class="form-horizontal" >
+          <div   class="background-blue"  >
+            <h1>filtro de busqueda</h1>
+            
+            <div class="row">
+              <div class="col-sm-8 ">
+                <a class="navbar-brand background-blue">Nombre</a>
+              </div> 
+
+              <div class="col-sm-4 ">
+                <select class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" ng-model="myName" ng-options="x.name for x in names">
+                </select>
+              </div>
+            </div>
+
+
+           <div class="row">
+            <div class="col-sm-8 ">
+              <a class="navbar-brand background-blue">Fecha Desde</a>
+            </div>
+
+              <div class="col-sm-4 ">
+                <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchD" placeholder="Buscar Produccion" ng-model="from"/>
+              </div>
+            </div>
+
+         <div class="row">
+
+          <div class="col-sm-8 ">
+            <a class="navbar-brand background-blue">Fecha Hasta</a>
+          </div>
+
+          <div class="col-sm-4 ">
+            <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchH" placeholder="Buscar Produccion" ng-model="to" ng-init="12/31/2020 | date"/>
+          </div>
+        </div>
+      </div>
+        </form>
+    </div>
+  </div>
+
+  <br>
+  
+
+
+    <div>
+    <hr background-color: blue">
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="despachoproduccion in $data | dateFilter:from:to | nameFilter:myName">
+                <td data-title="'Tipo'" sortable="'tipo'" filter="{ 'tipo': 'text' }">{{despachoproduccion.tipo}}
+                </td>
+
+                <td data-title="'Genero'" sortable="'genero'" filter="{ 'genero': 'text' }">{{despachoproduccion.genero}}
+                </td>              
+
+                 
+                <td data-title="'Cantidad'" sortable="'cantidad_produccion'" filter="{ 'cantidad_produccion': 'text' }">{{despachoproduccion.cantidad_docenas}}
+                </td>
+               
+
+                <td data-title="'Fecha'" sortable="'created'" filter="{ 'created': 'text' }">{{despachoproduccion.created | date: 'dd/ MM/ yyyy'}}
+                </td>
+                <td>
+                    <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/despachoproduccions/{{despachoproduccion._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

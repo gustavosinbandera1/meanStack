@@ -1,0 +1,28 @@
+<section data-ng-controller="DespachoproduccionsController as vm" data-ng-init="toViewDespachoproduccion()" >
+	<div class="page-header">
+		<h1 data-ng-bind="despachoproduccion.tipo"></h1>
+	</div>
+
+	<div class="col-md-12 verproduccion-style ">
+
+		<form novalidate>
+			<formly-form model="despachoproduccion" fields="vm.despachoFields">
+			</formly-form>
+		</form>
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == despachoproduccion.user._id))">
+			<!--<a class="btn btn-success" href="/#!/despachoproduccions/{{despachoproduccion._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Edit
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="remove()" item="despachoproduccion">
+				<i class="glyphicon glyphicon-remove-circle"></i> Delete
+			</a>-->
+			<a class="btn btn-primary" href="/#!/despachoproduccions">
+				<i class="glyphicon glyphicon-list"></i> List Despachoproduccions
+			</a>
+		</div>
+
+	</div>
+
+</section>

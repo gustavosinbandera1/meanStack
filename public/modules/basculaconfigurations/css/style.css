@@ -1,0 +1,156 @@
+/*h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 28px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 1px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+h2 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 20px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 30px 20px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+
+.btn-round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+
+.td-cantidad{
+  color:#F30;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+
+table tr:nth-child(odd) {
+background-color: #e50b0b;
+}
+table tr:nth-child(even) {
+background-color: #4b045b;
+}
+
+.background-blue{
+
+    
+    font-size: 20px;
+  background-color: #750f8c;
+  font-weight: bold;
+   color: orange;
+
+}
+.background-blue input{
+  
+  color:rgb(10, 28, 16);
+   border: 2px solid;
+   font-size: 16px;
+    background-color: rgb(219, 213, 234);
+   font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+   font-weight: bold;
+}
+.background-blue input:focus { 
+    background-color: rgb(209, 180, 232);
+}
+.background-blue select:focus {
+  background-color: rgb(209, 180, 232);
+}
+.background-blue select{
+  font-weight: bold;
+  color:rgb(10, 28, 16);
+  font-size: 16px;
+  border: 2px solid;
+  background-color: rgb(219, 213, 234);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: yellow;
+   background: url('../img/precio.jpg') center;
+  top:-200px;
+  left: 200px;
+}
+
+.listproduccion-style input{
+    
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    width: 300px;
+    background: transparent center;
+
+}
+
+.listproduccion-style select{
+  font-weight: bold;
+    color: white;
+    font-size: 20px;
+     background: transparent center;
+     width: 300px;
+     text-align: center;
+     align-items: center;
+
+      
+}
+
+  .listproduccion-style select option {
+    border: 5px solid yellow !important;
+    background-color: gray !important;
+    border-radius: 0px !important;
+    height:37px;
+    line-height:37px;
+    font-family: Cursive;
+    } 
+
+   
+ 
+
+.listproduccion-style {
+    
+    font-weight: bold;
+    color: orange;
+    font-size: 24px;
+    background: transparent center;
+}
+
+.verproduccion-style input{
+  font-weight: bold;
+    color: blue;
+    font-size: 24px;
+    width: 300px;
+   background: transparent center;
+   background-color: rgba(250,50,250,0.1);
+}
+.verproduccion-style select{
+  font-weight: bold;
+    color: blue;
+    font-size: 20px;
+     background: transparent center;
+     width: 300px;
+     text-align: center;
+     align-items: center;
+      background-color: rgba(250,50,250,0.1);
+}
+
+.verproduccion-style{
+  font-weight: bold;
+    color: orange;
+    font-size: 24px;
+     background: transparent center;
+
+}*/

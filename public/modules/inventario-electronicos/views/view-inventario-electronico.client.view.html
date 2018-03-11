@@ -1,0 +1,28 @@
+<section data-ng-controller="InventarioElectronicosController" data-ng-init="toViewInventarioElectronico()">
+	<div class="page-header">
+		<h1 data-ng-bind="inventarioElectronico.name"></h1>
+	</div>
+
+	<div class="col-md-12 verproduccion-style">
+
+		<form novalidate>
+			<formly-form model="inventarioElectronico" fields="formFields">
+			</formly-form>
+		</form>
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == inventarioElectronico.user._id))">
+			<a class="btn btn-success" href="/#!/inventario-electronicos/{{inventarioElectronico._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Editar
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Esta seguro ?" ng-really-click="remove()" item="inventarioElectronico">
+				<i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+			</a>
+			<a class="btn btn-primary" href="/#!/inventario-electronicos">
+				<i class="glyphicon glyphicon-list"></i> Listar
+			</a>
+		</div>
+
+	</div>
+
+</section>

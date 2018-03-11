@@ -1,0 +1,27 @@
+<section data-ng-controller="ProduccioncompaniesController as vm" data-ng-init="toEditProduccion()">
+    <div class="page-header">
+        <h1>Editar Produccion</h1>
+    </div>
+    <div class=" verproduccion-style">
+        <form data-ng-submit="update()" novalidate>
+
+          <formly-form model="produccioncompany" fields="vm.produccioncompanyFields">
+          </formly-form>
+
+          <hr/>
+          
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/produccioncompanies">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+         
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+</section>

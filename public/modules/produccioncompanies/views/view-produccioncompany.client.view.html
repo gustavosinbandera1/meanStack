@@ -1,0 +1,31 @@
+<section data-ng-controller="ProduccioncompaniesController as vm" data-ng-init="toViewProduccion()">
+	<div class="page-header">
+		<h1 data-ng-bind="produccioncompany.tipo"></h1>
+	</div>
+
+	<div class="col-md-12 verproduccion-style ">
+
+		<form novalidate>
+			<formly-form model="produccioncompany" fields="vm.produccioncompanyFields">
+			</formly-form>
+			<h1>{{produccioncompany.user.displayName}}</h1>
+		</form>
+
+		
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == produccioncompany.user._id))">
+			<a class="btn btn-success" href="/#!/produccioncompanies/{{produccioncompany._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Editar
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Esta Seguro?" ng-really-click="remove()" item="produccioncompany">
+				<i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+			</a>
+			<a class="btn btn-primary" href="/#!/produccioncompanies">
+				<i class="glyphicon glyphicon-list"></i> Ver Produccion
+			</a>
+		</div>
+
+	</div>
+
+</section>

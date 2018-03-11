@@ -1,0 +1,152 @@
+
+<section data-ng-controller="MateriaprimasController " data-ng-init="setFormFields(false)">
+    <div class="page-header">
+        <h1>Materia prima</h1>
+    </div>
+
+  <div ><!--Falta colocar los iconos en linea horizaontal  -->
+      <div class="showHide ">
+       <input type="checkbox" ng-model="myCheckCreate" id="toggleResult">
+       <label for="toggleResult">
+        <span class='expand'>
+            <span class="changeArrow arrow-dn glyphicon glyphicon-zoom-in"></span>
+            <span class="changeArrow arrow-up glyphicon glyphicon-zoom-out"></span>
+        </span>
+       </label>
+     </div>
+
+    <div class="showHide">
+      <input type="checkbox" ng-model="myCheckView" id="toggle">
+      <label for="toggle">
+        <span class='expand'>
+            <span class="changeArrow arrow-plus glyphicon glyphicon-plus-sign"></span>
+            <span class="changeArrow arrow-minus glyphicon glyphicon-minus-sign"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+
+
+
+   <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/materiaprimas/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo
+      </a>
+    </div>
+
+<!--inicio del contenedor-->
+   <div ng-hide="!myCheckCreate" class="fieldsetContainerResult" >
+   <hr style="width:100%; background-color: red">
+
+    <div class="col-md-12">
+    <form novalidate class="form-horizontal" data-ng-submit="create()" data-ng-init="setFormFields(false)" prevent-enter-submit>
+      <h1>Ingresar Materia Prima</h1>
+     <div class="listproduccion-style">
+      <formly-form model="materiaprima" fields="formFields">
+         <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/materiaprimas">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+      </formly-form>
+      </div>
+    </form>
+</div>
+  </div><!--fin contenedor-->
+
+
+
+
+
+   <div ng-hide="!myCheckView" class="fieldsetContainer" >
+    <hr style="width:100%; background-color: red;"><br>
+     <div class="col-md-12">
+        <form class="form-horizontal" >
+          <div   class="background-blue"  >
+            <h1>filtro de busqueda</h1>
+            
+            <div class="row">
+              <div class="col-sm-8 ">
+                <a class="navbar-brand background-blue">Nombre</a>
+              </div> 
+
+              <div class="col-sm-4 ">
+                <select class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" ng-model="myName" ng-options="x for x in names">
+                </select>
+              </div>
+            </div>
+
+
+           <div class="row">
+            <div class="col-sm-8 ">
+              <a class="navbar-brand background-blue">Fecha Desde</a>
+            </div>
+
+              <div class="col-sm-4 ">
+                <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchD" placeholder="Buscar Produccion" ng-model="from"/>
+              </div>
+            </div>
+
+         <div class="row">
+
+          <div class="col-sm-8 ">
+            <a class="navbar-brand background-blue">Fecha Hasta</a>
+          </div>
+
+          <div class="col-sm-4 ">
+            <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchH" placeholder="Buscar Produccion" ng-model="to" ng-init="12/31/2020 | date"/>
+          </div>
+        </div>
+      </div>
+        </form>
+    </div>
+  </div>
+
+  <br>
+  
+  
+
+
+
+
+
+
+
+
+ 
+
+    <div>
+    <hr style="width:100%; background-color: red">
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="materiaprima in $data | dateFilter:from:to | nameFilterMateria:myName">
+                <td data-title="'Nombre'" sortable="'name'" filter="{ 'name': 'text' }">{{materiaprima.name}}
+                </td>
+               
+                <td data-title="'Cantidad'" sortable="'cantidad'" filter="{ 'cantidad': 'text' }">{{materiaprima.cantidad}}
+                </td>
+
+                <td data-title="'Fecha'" sortable="'created'" filter="{ 'created': 'text' }">{{materiaprima.created | date}}
+                </td>
+                <td>
+                    <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/materiaprimas/{{materiaprima._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+
+

@@ -1,0 +1,30 @@
+<section data-ng-controller="ProduccionstocksController as vm" data-ng-init="toViewProduccion()" >
+	<div class="page-header">
+		<h1 data-ng-bind="produccionstock.tipo"></h1>
+	</div>
+
+	<div class="col-md-12 verproduccion-style ">
+
+		<form novalidate>
+			<formly-form model="produccionstock" fields="vm.productionstockFields">
+			</formly-form>
+		</form>
+
+		
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == produccionstock.user._id))">
+			<!--<a class="btn btn-success" href="/#!/produccionstocks/{{produccionstock._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Editar
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Esta Seguro?" ng-really-click="remove()" item="produccionstock">
+				<i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+			</a>-->
+			<a class="btn btn-primary" href="/#!/produccionstocks">
+				<i class="glyphicon glyphicon-list"></i> Ver Produccion
+			</a>
+		</div>
+
+	</div>
+
+</section>

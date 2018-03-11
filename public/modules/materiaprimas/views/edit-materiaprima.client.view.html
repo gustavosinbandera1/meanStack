@@ -1,0 +1,27 @@
+<section data-ng-controller="MateriaprimasController" data-ng-init="toEditMateriaprima()">
+    <div class="page-header">
+        <h1>Editar Materia prima</h1>
+    </div>
+    <div class="col-md-12 verproduccion-style">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+
+          <formly-form model="materiaprima" fields="formFields">
+    			</formly-form>
+
+          <hr/>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i>  Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/materiaprimas">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+
+<section data-ng-controller="CustomersController as vm" data-ng-init="toViewCustomer()"">
+	<div class="page-header">
+		<h1 data-ng-bind="customer.name"></h1>
+	</div>
+
+	<div class="col-md-12 verproduccion-style">
+
+		<form novalidate>
+			<formly-form model="customer" fields="vm.customerFields">
+			</formly-form>
+		</form>
+
+		
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == customer.user._id))">
+			<a class="btn btn-success" href="/#!/customers/{{customer._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Editar
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Esta Seguro?" ng-really-click="remove(customer)" item="customer">
+				<i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+			</a>
+			<a class="btn btn-primary" href="/#!/customers">
+				<i class="glyphicon glyphicon-list"></i> Ver
+			</a>
+		</div>
+
+	</div>
+
+</section>

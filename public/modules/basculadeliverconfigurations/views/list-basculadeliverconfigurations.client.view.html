@@ -1,0 +1,39 @@
+
+
+
+<section data-ng-controller="BasculadeliverconfigurationsController as vm">
+    <div class="page-header">
+        <h1>Configuracion Bascula Despachos</h1>
+    </div>
+
+    <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/basculadeliverconfigurations/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo
+      </a>
+    </div>
+
+    <div>
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="basculadeliverconfiguration in $data">
+                <td data-title="'Tipo'" sortable="'tipo'" filter="{ 'tipo': 'text' }">{{basculadeliverconfiguration.tipo}}</td>
+                <td data-title="'Genero'" sortable="'genero'" filter="{ 'genero': 'text' }">{{basculadeliverconfiguration.genero}}</td>
+               
+                <td data-title="'Peso docena (Kg)'" sortable="'peso_docena'" filter="{ 'peso_docena': 'text' }">{{basculadeliverconfiguration.peso_docena}}</td>
+                
+                <td>
+                     <div  class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/basculadeliverconfigurations/{{basculadeliverconfiguration._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                      <!-- <a class="btn btn-default" title="Edit" href="/#!/basculaconfigurations/{{basculaconfiguration._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                         <a class="btn btn-danger" title="Remove" ng-really-message="Esta seguro ?" ng-really-click="remove(basculaconfiguration)" item="basculaconfiguration">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </a>-->
+                    </div>         
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

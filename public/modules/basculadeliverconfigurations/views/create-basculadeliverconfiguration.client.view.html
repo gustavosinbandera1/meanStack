@@ -1,0 +1,93 @@
+<!--
+
+-->
+
+<br>
+<br>
+
+  <div>  
+           <label class="myLabel">Seleccionar Bascula: </label>
+           <select class="mySelect" ng-model="selectedItem" ng-change="vm.update()">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+          </div>
+
+<div style="padding: 10px 100px">
+      <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+</div>
+        </div>
+      </div><br>
+      
+      
+         <!--<button  class="btn btn-success" ng-click="setPeso()" ng-disabled="!basculadeliverconfiguration.tipo">
+                <i class="glyphicon fa fa-check-square-o"></i> Capturar peso
+         </button>
+        
+      
+             <a class="btn btn-danger" href="/#!/basculadeliverconfigurations">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+           </a>-->
+         
+  
+
+
+
+
+
+<!--<h1 data-ng-bind="produccion.peso_produccion"></h1>-->
+
+<div class="col-md-12 listproduccion-style">
+    <form novalidate prevent-enter-submit  data-ng-submit="create()" data-ng-init="setFormFields(false)">
+      <h1>Ingresar Configuracion </h1>
+
+     <!-- <formly-field options="vm.checkboxField" model="vm.options.formState"></formly-field>-->
+
+      <formly-form model="basculadeliverconfiguration" fields="vm.basculadeliverConfigurationFields" form="vm.basculaForm">
+         
+          <button type="submit" class="btn btn-success" ng-disabled="vm.basculaForm.$invalid"> <i class="glyphicon glyphicon-ok"></i>Guardar</button>
+
+           <a class="btn btn-danger" href="/#!/basculadeliverconfigurations">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+           </a>
+
+         
+      </formly-form>
+
+
+     <hr/>
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

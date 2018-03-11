@@ -1,0 +1,34 @@
+<section data-ng-controller="MantenimientosController">
+    <div class="page-header">
+        <h1>Mantenimientos</h1>
+    </div>
+
+    <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/mantenimientos/create">
+        <i class="glyphicon glyphicon-open"></i> New Mantenimiento
+      </a>
+    </div>
+
+    <div>
+        <table ng-table="tableParams" show-filter="true">
+            <tr ng-repeat="mantenimiento in $data">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">{{mantenimiento.name}}</td>
+                <td>
+                    <div class="table-actions">
+                <td>
+                   <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/mantenimientos/{{mantenimiento._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <a class="btn btn-default" title="Edit" href="/#!/mantenimientos/{{mantenimiento._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="remove(mantenimiento)" item="mantenimiento">
+                  				<span class="glyphicon glyphicon-remove-circle"></span>
+                  			</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

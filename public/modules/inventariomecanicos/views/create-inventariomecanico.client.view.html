@@ -1,0 +1,57 @@
+<section data-ng-controller="InventariomecanicosController" data-ng-init="setFormFields(false)">
+
+
+<!-- Bascula visualizacion-->
+
+<div style="padding: 0px 100px">
+      <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+        </div>
+      </div>
+      
+</div>
+
+    
+
+    <div class="page-header">
+        <h1>Nuevo Inventariomecanico</h1>
+    </div>
+
+     <button  class="btn btn-success" ng-click="pedirDatos()">
+                <i class="glyphicon glyphicon-ok"></i> Leer
+              </button>
+
+               <button  class="btn btn-success" ng-click="conectar()">
+                <i class="glyphicon glyphicon-ok"></i> Conectar
+              </button>
+
+               <button  class="btn btn-success" ng-click="desconectar()">
+                <i class="glyphicon glyphicon-ok"></i> Desconectar
+              </button>
+
+    <div class="col-md-12 listproduccion-style">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+
+          <formly-form model="inventariomecanico" fields="formFields">
+    			</formly-form>
+
+          <hr/>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Save
+              </button>
+              <a class="btn btn-danger" href="/#!/inventariomecanicos">
+                <i class="glyphicon glyphicon-remove"></i> Cancel
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+</section>

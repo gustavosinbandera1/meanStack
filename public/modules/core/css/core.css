@@ -1,0 +1,481 @@
+.formly {
+  /* style your forms however you like */
+}
+
+.formly-field {
+  /* for example, give some space between your fields */
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+ color: #737373;
+}
+
+
+.content {
+	margin-top: 50px;
+}
+
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+
+
+.ng-table {
+  width: 100%;
+  border: 3px solid #40f7f7;
+  border-collapse: collapse;
+padding: 0;
+text-align: center;
+font-weight: bold;
+}
+
+.ng-table > thead > tr > th {
+  color:#fff;
+  border: 3px solid #40f7f7;
+  border-collapse: collapse;
+text-align: center;
+font-weight: bold;
+font-size: 28px;
+}
+
+.ng-table > tbody > tr > th, .ng-table > tfoot > tr > th, .ng-table > thead > tr > td, .ng-table > tbody > tr > td, .ng-table > tfoot > tr > td {
+  height: 50px;
+border-collapse: collapse;
+padding: 0;
+text-align: center;
+/*font-weight: bold;*/
+
+
+ color: #fff;
+    /*text-shadow: 0 1px 0 #000;*/
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+
+
+
+.ng-table-filters {
+  height: 60px;
+}
+
+.ng-table-filters .filter {
+  vertical-align: top;
+}
+
+.ng-table > thead > tr > th {
+  padding-bottom: 0;
+  padding-top: 0;
+
+}
+
+.actions {
+  margin-bottom: 30px;
+}
+
+.table-actions {
+  width: auto;
+}
+
+.ng-table th.filter .input-filter {
+  margin: 12px;
+  width: 90%;
+}
+
+
+.ng-table-pager {
+  margin-top: 0px;
+}
+
+
+
+
+
+.title-nav{
+  color:#fff;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px;
+  font-style: oblique;
+ 
+  background-position: 20px 20px; 
+  text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+}
+.navbar-inverse {
+     border-bottom-color: blue;
+     border-top-color: red;
+      font-size: 24px;
+      
+}
+
+.miNav{
+  color:#baebD4;
+  font-style: oblique;
+    font-size: 26px;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+
+    /*text-shadow: 1px 1px 1px #baebf4, 1px 1px 1px rgba(250,50,250,0.9);*/
+}
+
+.miSubNav{
+  /*color:#baebf4;*/
+  color:#ccc;
+  font-style: oblique;
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+}
+
+
+
+
+
+  .fieldsetContainer {
+    overflow: hidden;
+    transition: height 400ms linear;
+    text-align: center;
+
+   transition: all linear 0.4s;
+  background-color: black;
+  background: url('../img/precio.jpeg') center;
+  height: 360px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked ~ .fieldsetContainer {
+    height: 0;
+}
+
+label .arrow-minus { display: none; }
+label .arrow-plus { display: inline-block; }
+
+#toggle:checked ~ label .arrow-minus { display: inline-block; }
+#toggle:checked ~ label .arrow-plus { display: none; }
+
+
+.fieldsetContainerResult {
+    overflow: scroll;
+    transition: height 500ms linear;
+
+    transition: all linear 0.64s;
+  background-color: red;
+  background: url('../img/login1.jpeg') center;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+
+
+
+  
+}
+
+
+#toggleResult {
+    display: none;
+}
+
+#toggleResult:checked ~ .fieldsetContainerResult {
+    height: 0;
+}
+
+label .arrow-dn { display: inline-block; }
+label .arrow-up { display: none; }
+
+#toggleResult:checked ~ label .arrow-dn { display: none; }
+#toggleResult:checked ~ label .arrow-up { display: inline-block; }
+
+
+
+
+
+
+.glyphicon.glyphicon-zoom-in {
+    font-size: 50px;
+   color:#08e0dc
+}
+.glyphicon.glyphicon-zoom-out {
+    font-size: 50px;
+   color:#06a39d
+}
+
+
+.glyphicon.glyphicon-plus-sign {
+    font-size: 40px;
+   color:#08e0dc
+}
+.glyphicon.glyphicon-minus-sign {
+    font-size: 40px;
+   color:#06a39d
+}
+
+
+table tr:nth-child(odd) {
+background-color: #e50b0b;
+background: url('../img/tablan.jpg') center;
+}
+table tr:nth-child(even) {
+background: url('../img/tablan1.jpg') center;
+
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 28px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 1px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+h2 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 20px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 30px 20px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+.btn-round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+
+.td-cantidad{
+  color:#F30;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.background-blue{
+
+    
+    font-size: 20px;
+  background-color: #750f8c;
+   background: url('../img/login1.jpeg') center;
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+   color: yellow;
+
+}
+.background-blue{
+
+    
+    font-size: 20px;
+  background-color: #750f8c;
+  font-weight: bold;
+   /*color: orange;*/
+
+}
+.background-blue input{
+  
+  color:rgb(10, 28, 16);
+   border: 2px solid;
+   font-size: 16px;
+    background-color: rgb(219, 213, 234);
+   font-family: 'Helvetica', Arial, Lucida Grande, sans-serif;
+   font-weight: bold;
+}
+.background-blue input:focus { 
+    background-color: rgb(209, 180, 232);
+}
+.background-blue select:focus {
+  background-color: rgb(209, 180, 232);
+}
+.background-blue select{
+  font-weight: bold;
+  color:rgb(10, 28, 16);
+  font-size: 16px;
+  border: 2px solid;
+  background-color: rgb(219, 213, 234);
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: yellow;
+   background: url('../img/precio.jpg') center;
+  top:-200px;
+  left: 200px;
+}
+
+.listproduccion-style input{
+    
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    width: 300px;
+    background: transparent center;
+
+}
+
+.listproduccion-style select{
+  font-weight: bold;
+    color: white;
+    font-size: 20px;
+     background: transparent center;
+     width: 300px;
+     text-align: center;
+     align-items: center;
+
+      
+}
+
+  .listproduccion-style select option {
+    border: 5px solid yellow !important;
+    background-color: gray !important;
+    border-radius: 0px !important;
+    height:37px;
+    line-height:37px;
+    font-family: Cursive;
+    } 
+
+   
+ 
+
+.listproduccion-style {
+    
+    font-weight: bold;
+    color: rgb(200,250,255);
+    font-size: 24px;
+    background: transparent center;
+     text-shadow: 2px 0px 1px rgb(249,55,20), 4px 4px 0px rgba(70,255,12,0.3);
+
+}
+/*
+.verproduccion-style input{
+  font-weight: bold;
+    color: blue;
+    font-size: 24px;
+    width: 300px;
+   background: transparent center;
+ 
+}
+
+
+*/
+.verproduccion-style{
+  font-weight: bold;
+   color:rgb(200,200,30);
+    font-size: 24px;
+     background: transparent center;
+     /* text-shadow: 2px 0px 1px rgb(245,55,20), 2px 2px 0px rgba(100,110,90,0.9);*/
+
+
+}
+.verproduccion-style select{
+  font-weight: bold;
+    color: blue;
+    font-size: 24px;
+     background: transparent center;
+     width: 350px;
+     height: 40px;
+     text-align: center;
+     align-items: center;
+}
+.verproduccion-style input{
+  font-weight: bold;
+    color: blue;
+    font-size: 24px;
+    width: 350px;
+    height: 40px;
+   
+ 
+}
+
+
+
+
+
+
+
+.mySelect {
+   font-size: 30px;
+    width: auto;
+    height: auto;
+    /*color: blue;*/
+    font-weight: bold;
+   
+
+    /* color:red;
+    font-size: 28px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 1px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+*/
+
+}
+
+select.mySelect option.option1{
+ color: blue;
+}
+select.mySelect option.option2{
+ color: orange;
+}
+select.mySelect option.option3{
+ color: green;
+}
+select.mySelect option.option4{
+ color: violet;
+}
+
+
+
+.myLabel{
+  /*font-size: 30px;
+  color:yellow;*/
+
+
+
+
+  color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 28px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 1px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+
+}

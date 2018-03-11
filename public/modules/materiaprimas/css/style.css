@@ -1,0 +1,77 @@
+/*h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 28px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 1px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+h2 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 20px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration:none;
+    padding: 30px 20px;
+    text-shadow: 1px 1px 1px #1b25d4, 4px 4px 1px rgba(50,50,250,0.9);
+
+}
+
+
+.btn-round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+
+.td-cantidad{
+  color:#F30;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+
+table tr:nth-child(odd) {
+background-color: #e50b0b;
+background: url('../img/tablan.jpg') center;
+}
+table tr:nth-child(even) {
+background: url('../img/tablan1.jpg') center;
+
+}
+
+.background-blue{
+
+    
+    font-size: 20px;
+  background-color: #750f8c;
+   background: url('../img/login1.jpeg') center;
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+   color: yellow;
+
+}
+
+
+
+
+
+
+.myDiv {
+  
+}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: white;
+  top:-200px;
+  left: 200px;
+}*/

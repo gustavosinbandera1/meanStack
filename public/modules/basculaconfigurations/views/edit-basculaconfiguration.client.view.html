@@ -1,0 +1,43 @@
+
+<div style="padding: 10px 100px">
+      <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+</div>
+        </div>
+      </div><br>
+
+
+
+
+
+
+<section data-ng-controller="BasculaconfigurationsController as vm" data-ng-init="toEditBasculaconfiguration()" class="listproduccion-style">
+    <div class="page-header">
+        <h1>Editar Bascula</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+
+          <formly-form model="basculaconfiguration" fields="vm.basculaConfigurationFields ">
+          </formly-form>
+
+          <hr/>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/basculaconfigurations">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+</section>

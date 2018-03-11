@@ -1,0 +1,25 @@
+<section data-ng-controller="CustomersController as vm" data-ng-init="setFormFields(false)">
+    
+<form novalidate  data-ng-submit="create()" data-ng-init="setFormFields(false)" prevent-enter-submit>
+  <br>
+ 
+  
+  <div class="listproduccion-style col-md-12">
+    <h1>Ingresar Cliente</h1>
+    <formly-form model="customer" fields="vm.customerFields" form="vm.customerForm">
+      <button type="submit" class="btn btn-success" ng-disabled="vm.customerForm.$invalid"> <i class="glyphicon glyphicon-ok"></i>Guardar
+      </button>
+      <a class="btn btn-danger" href="/#!/customers">
+        <i class="glyphicon glyphicon-remove"></i> Cancelar
+      </a>
+    </formly-form>
+  </div>
+  <div data-ng-show="error" class="alert alert-danger form-group">
+    <strong data-ng-bind="error"></strong>
+  </div>
+</form>
+
+</section>
+
+
+

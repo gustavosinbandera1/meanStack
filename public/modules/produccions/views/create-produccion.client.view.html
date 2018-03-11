@@ -1,0 +1,91 @@
+
+<section data-ng-controller="ProduccionsController as vm" data-ng-init="getBasculaIngresos(false)" >
+
+
+
+
+    
+<form novalidate  data-ng-submit="create()" data-ng-init="setFormFields(false)" prevent-enter-submit>
+
+
+          <div>  
+           <label class="myLabel">Seleccionar Bascula: </label>
+           <select class="mySelect" ng-model="selectedItem" ng-change="vm.update()">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+          </div> 
+
+
+  <div style="padding: 10px 100px">
+    <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+        </div>
+    </div>
+  </div><br>
+  <button  class="btn btn-success"  ng-click="setPeso()" ng-disabled="!produccion.tipo || produccion.tipo=='empaque'">
+    <i class="glyphicon fa fa-check-square-o"></i> Capturar peso
+  </button>
+
+
+
+  <button  class="btn btn-success"  ng-click="emitir1()" >
+    <i class="glyphicon fa fa-check-square-o"></i> emitir1
+  </button>
+
+   <button  class="btn btn-success"  ng-click="emitir2()" >
+    <i class="glyphicon fa fa-check-square-o"></i> emitir2
+  </button>
+
+   <button  class="btn btn-success"  ng-click="emitir3()" >
+    <i class="glyphicon fa fa-check-square-o"></i> emitir3
+  </button>
+
+   <button  class="btn btn-success"  ng-click="emitir4()" >
+    <i class="glyphicon fa fa-check-square-o"></i> emitir4
+  </button>
+
+
+
+
+  <a class="btn btn-warning" href="/#!/basculaconfigurations">
+    <i class="glyphicon glyphicon-remove"></i> Configurar
+  </a>
+  
+  <div class="listproduccion-style col-md-12">
+    <h1>Ingresar Produccion</h1>
+    <formly-form model="produccion" fields="vm.produccionFields" form="vm.produccionForm">
+      <button type="submit" class="btn btn-success" ng-disabled="vm.produccionForm.$invalid"> <i class="glyphicon glyphicon-ok"></i>Guardar
+      </button>
+      <a class="btn btn-danger" href="/#!/produccions">
+        <i class="glyphicon glyphicon-remove"></i> Cancelar
+      </a>
+    </formly-form>
+  </div>
+  <div data-ng-show="error" class="alert alert-danger form-group">
+    <strong data-ng-bind="error"></strong>
+  </div>
+</form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

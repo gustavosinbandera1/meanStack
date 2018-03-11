@@ -1,0 +1,196 @@
+<!--<section data-ng-controller="InventariomecanicosController">
+    <div class="page-header">
+        <h1>Inventariomecanicos</h1>
+    </div>
+
+    <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/inventariomecanicos/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo Inventario Mecanico
+      </a>
+    </div>
+
+    <div>
+        <table ng-table="tableParams" show-filter="true">
+            <tr ng-repeat="inventariomecanico in $data">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">{{inventariomecanico.name}}</td>
+                <td data-title="'Cantidad'" sortable="'cantidad'" filter="{ 'cantidad': 'text' }">{{inventariomecanico.cantidad}}</td>
+                <td data-title="'Descripcion'" sortable="'descripcion'" filter="{ 'descripcion': 'text' }">{{inventariomecanico.descripcion}}</td>
+                <td>
+                    <div class="table-actions">
+                <td>
+                   <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/inventariomecanicos/{{inventariomecanico._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <a class="btn btn-default" title="Edit" href="/#!/inventariomecanicos/{{inventariomecanico._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="remove(inventariomecanico)" item="inventariomecanico">
+                  				<span class="glyphicon glyphicon-remove-circle"></span>
+                  			</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+-->
+
+
+
+
+
+<section data-ng-controller="InventariomecanicosController" data-ng-init="setFormFields(false)"><br>
+    <div class="page-header ">
+        <h1>Inventario Partes Mecanicas</h1>
+    </div>
+
+ <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/inventariomecanicos/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo Inventario Mecanico
+      </a>
+    </div>
+
+<div >
+  <div class="showHide ">
+    <input type="checkbox" ng-model="myCheckCreate" id="toggleResult">
+      <label for="toggleResult">
+          <span class='expand'>
+           <span class="changeArrow arrow-dn glyphicon glyphicon-zoom-in"></span>
+            <span class="changeArrow arrow-up glyphicon glyphicon-zoom-out"></span>
+           
+          </span>
+      </label>
+  </div>
+   <div class="showHide">
+    <input type="checkbox" ng-model="myCheckView" id="toggle">
+      <label for="toggle">
+          <span class='expand'>
+            <span class="changeArrow arrow-plus glyphicon glyphicon-plus-sign"></span>
+              <span class="changeArrow arrow-minus glyphicon glyphicon-minus-sign"></span>
+          </span>
+      </label>
+  </div>
+</div>
+
+
+
+
+
+
+  <div ng-hide="!myCheckCreate" class="fieldsetContainerResult" >
+    <h1>Nuevo Inventario Mecanico</h1>
+
+     <div class="col-md-12 listproduccion-style">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+
+          <formly-form model="inventariomecanico" fields="formFields">
+          <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/inventariomecanicos">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+          </formly-form>
+
+          
+
+        </form>
+    </div>
+  </div>
+
+
+
+
+  <div ng-hide="!myCheckView" class="fieldsetContainer" >
+     <div class="col-md-12">
+        <form class="form-horizontal" >
+          <div   class="background-blue"  >
+            <h1>filtro de busqueda</h1>
+            
+            <div class="row">
+              <div class="col-sm-8 ">
+                <a class="navbar-brand background-blue">Nombre</a>
+              </div> 
+
+              <div class="col-sm-4">
+              <input class="form-control pull-right" type="text" placeholder="Buscar Produccion" style="margin:7px 7px 0 0;width:150px" type="date" ng-model="myName"/>
+              </div>
+            </div>
+
+
+           <div class="row">
+            <div class="col-sm-8 ">
+              <a class="navbar-brand background-blue">Fecha Desde</a>
+            </div>
+
+              <div class="col-sm-4 ">
+                <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchD" placeholder="Buscar Produccion" ng-model="from" ng-init="07/12/2017" />
+              </div>
+            </div>
+
+         <div class="row">
+
+          <div class="col-sm-8 ">
+            <a class="navbar-brand background-blue">Fecha Hasta</a>
+          </div>
+
+          <div class="col-sm-4 ">
+            <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchH" placeholder="Buscar Produccion" ng-model="to" />
+          </div>
+        </div>
+      </div>
+
+      <br>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                <i class="glyphicon glyphicon-ok"></i> Guardar
+              </button>
+              <a class="btn btn-danger" href="/#!/inventariomecanicos">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+  </div>
+  <br>
+
+    <div>
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="inventariomecanico in $data | dateFilter:from:to | nameFilterMecanico:myName" >
+                <td data-title="'Nombre...'" sortable="'name'"  filter="{ 'name': 'text' }">{{inventariomecanico.name}}</td>
+                
+
+                 <td data-title="'Cantidad'" sortable="'cantidad'"  class="td-cantidad">{{inventariomecanico.cantidad}}</td>
+                
+                <!--<td data-title="'Descripcion'" sortable="'created'"  >{{inventariomecanico.descripcion}}</td>-->
+                  
+                
+
+                 <td data-title="'Fecha'" sortable="'created'"  >{{inventariomecanico.created | date}}</td>
+                  
+                 <td>
+                <a class="btn btn-default" title="View" href="/#!/inventariomecanicos/{{inventariomecanico._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,32 @@
+
+<section data-ng-controller="BasculaconfigurationsController as vm" data-ng-init="toViewBasculaconfiguration()">
+	<div class="page-header">
+		<h1 data-ng-bind="basculaconfiguration.tipo"></h1>
+	</div>
+
+	<div class="col-md-12  verproduccion-style" >
+
+		<form novalidate>
+			<formly-form model="basculaconfiguration" fields="vm.basculaConfigurationFields">
+			</formly-form>
+		</form>
+
+		
+
+		<hr/>
+		<div data-ng-show="((authentication.user) && (authentication.user._id == basculaconfiguration.user._id))">
+			<a class="btn btn-success" href="/#!/basculaconfigurations/{{basculaconfiguration._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Editar
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Esta Seguro?" ng-really-click="remove(basculaconfiguration)" item="basculaconfiguration">
+				<i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+			</a>
+			<a class="btn btn-primary" href="/#!/basculaconfigurations">
+				<i class="glyphicon glyphicon-list"></i> Ver produccion
+			</a>
+		</div>
+
+	</div>
+
+</section>
+

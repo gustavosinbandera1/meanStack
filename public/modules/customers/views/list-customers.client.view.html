@@ -1,0 +1,40 @@
+
+
+<section data-ng-controller="CustomersController as vm">
+    <div class="page-header">
+        <h1>Listado de Clientes</h1>
+    </div>
+
+    <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/customers/create">
+        <i class="glyphicon glyphicon-open"></i> New Customer
+      </a>
+    </div>
+
+    <div>
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="customer in $data">
+                <td data-title="'Nombre'" sortable="'name'" filter="{ 'name': 'text' }">{{customer.name}}</td>
+                <td data-title="'Ciudad'" sortable="'state'" filter="{ 'state': 'text' }">{{customer.state}}</td>
+               <!--
+                <td data-title="'Direccion '" sortable="'address'" filter="{ 'address': 'text' }">{{customer.address}}</td>
+
+                <td data-title="'Telefono '" sortable="'tel'" filter="{ 'tel': 'text' }">{{customer.tel}}</td>
+                -->
+                <td>
+                     <div  class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/customers/{{customer._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                      <!-- <a class="btn btn-default" title="Edit" href="/#!/basculaconfigurations/{{basculaconfiguration._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                         <a class="btn btn-danger" title="Remove" ng-really-message="Esta seguro ?" ng-really-click="remove(basculaconfiguration)" item="basculaconfiguration">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </a>-->
+                    </div>         
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

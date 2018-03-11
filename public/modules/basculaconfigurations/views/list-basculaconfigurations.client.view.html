@@ -1,0 +1,41 @@
+
+
+<section data-ng-controller="BasculaconfigurationsController as vm">
+    <div class="page-header">
+        <h1>Configuracion Bascula </h1>
+        <h1>Ingresos de Produccion</h1>
+    </div>
+
+    <div class="pull-left btn-group-lg">
+      <a type="button" class="btn btn-primary" href="/#!/basculaconfigurations/create">
+        <i class="glyphicon glyphicon-open"></i> Nuevo
+      </a>
+    </div>
+
+    <div>
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="basculaconfiguration in $data">
+                <td data-title="'Tipo'" sortable="'tipo'" filter="{ 'tipo': 'text' }">{{basculaconfiguration.tipo}}</td>
+               <td data-title="'Tamaño'" sortable="'tamano'" filter="{ 'tamano': 'text' }">{{basculaconfiguration.tamano}}</td>
+                <td data-title="'Peso docena(Kg)'" sortable="'peso_docena'" filter="{ 'peso_docena': 'text' }">{{basculaconfiguration.peso_docena}}</td>
+                <td>
+                <td data-title="'Genero'" sortable="'genero'" filter="{ 'genero': 'text' }">{{basculaconfiguration.genero}}</td>
+                <td>
+                 
+                <td>
+                     <div  class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/basculaconfigurations/{{basculaconfiguration._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                      <!-- <a class="btn btn-default" title="Edit" href="/#!/basculaconfigurations/{{basculaconfiguration._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                         <a class="btn btn-danger" title="Remove" ng-really-message="Esta seguro ?" ng-really-click="remove(basculaconfiguration)" item="basculaconfiguration">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </a>-->
+                    </div>         
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

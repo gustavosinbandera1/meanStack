@@ -1,0 +1,84 @@
+<!--<section data-ng-controller="DespachoproduccionsController as vm" data-ng-init=" getClients(false);">-->
+    
+ 
+<section >
+
+
+  
+
+
+    
+  <form novalidate  data-ng-submit="create()" prevent-enter-submit data-ng-init=" getClients(false);">
+
+
+      <div>  
+           <label class="myLabel">Seleccionar Bascula: </label>
+           <select class="mySelect" ng-model="selectedItem" ng-change="vm.update()">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+          </div> 
+
+    <div style="padding: 10px 100px">
+    <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+        </div>
+    </div>
+  </div><br>
+  <div class="btn-group-lg">
+  <button  class="btn btn-success"  ng-click="setPeso()" ng-disabled="!despachoproduccion.tipo">
+    <i class="glyphicon fa fa-check-square-o"></i> Capturar peso
+  </button>
+  <a class="btn btn-primary" href="/#!/basculadeliverconfigurations">
+    <i class="glyphicon glyphicon-wrench"></i> Configurar
+  </a>
+  </div>
+
+      <h1>Despacho De Produccion</h1>
+
+      
+      
+
+<div class="listproduccion-style col-md-12">
+      <formly-form model="despachoproduccion" fields="vm.despachoFields" form="vm.despachoproduccionForm">
+      <div flex layout="column" layout-align="left left" class="text-left">
+        <div >
+              <h1 class="text-left">Cantidad de Bultos:</label>
+        </div>
+        <div>
+           <input type="number" name="input" ng-model="example.value" min="0" max="99">
+        </div>
+        
+      </div>
+ <br>
+ <div class="btn-group-lg">
+
+        <button type="submit" class="btn btn-success" ng-disabled="vm.despachoproduccionForm.$invalid"> <i class="glyphicon glyphicon-save-file"></i>Guardar
+        </button>
+        <a class="btn btn-primary" href="/#!/despachoproduccions">
+          <i class="glyphicon glyphicon-refresh"></i> Cancelar
+        </a>
+  </div>
+
+        </formly-form>
+        </div>
+
+
+    <div data-ng-show="error" class="alert alert-danger form-group">
+      <strong data-ng-bind="error"></strong>
+    </div>
+  </form>
+
+
+<!--</section>-->
+</section>
+
+
+
+
+

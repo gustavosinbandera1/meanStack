@@ -1,0 +1,195 @@
+<section data-ng-controller="ProduccioncompaniesController as vm" data-ng-init="setFormFields(false)">
+    <div class="page-header">
+        <h1>Ingreso De Produccion</h1>
+    </div>
+
+  <div ><!--Falta colocar los iconos en linea horizaontal  -->
+      <div class="showHide ">
+       <input type="checkbox" ng-model="myCheckCreate" id="toggleResult">
+       <label for="toggleResult">
+        <span class='expand'>
+            <span class="changeArrow arrow-dn glyphicon glyphicon-zoom-in"></span>
+            <span class="changeArrow arrow-up glyphicon glyphicon-zoom-out"></span>
+        </span>
+       </label>
+     </div>
+
+    <div class="showHide">
+      <input type="checkbox" ng-model="myCheckView" id="toggle">
+      <label for="toggle">
+        <span class='expand'>
+            <span class="changeArrow arrow-plus glyphicon glyphicon-plus-sign"></span>
+            <span class="changeArrow arrow-minus glyphicon glyphicon-minus-sign"></span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+
+
+
+   <div class="pull-right">
+      <a type="button" class="btn btn-success" href="/#!/produccioncompanies/create">
+        <i class="glyphicon glyphicon-open"></i> Nueva Produccion
+      </a>
+    </div>
+
+<!--inicio del contenedor-->
+   <div ng-hide="!myCheckCreate" class="fieldsetContainerResult" >
+   <hr style="width:100%; background-color: red">
+
+    <div class="col-md-12 " >
+    <form novalidate class="form-horizontal" data-ng-submit="create()" data-ng-init="setFormFields(false)" prevent-enter-submit>
+
+        <div style="padding: 10px 100px">
+      <div style="width: 116px; height: 80px; position: relative; background: transparent  no-repeat top left">
+        <div style="position: relative; left: -100px; top: 0px; width: 100px; height: 100px">
+          <canvas id="display" width="300" height="80">
+            
+          </canvas>
+</div>
+        </div>
+      </div><br>
+      
+      
+         <button  class="btn btn-success"  ng-click="setPeso()" ng-disabled="!produccioncompany.tipo">
+                <i class="glyphicon fa fa-check-square-o"></i> Capturar peso
+         </button>
+        
+      
+            <!-- <a class="btn btn-danger" href="/#!/basculaconfigurations">
+                <i class="glyphicon glyphicon-remove"></i> Configurar
+           </a>-->
+
+
+      <h1>Ingresar Produccion</h1>
+     <div class="listproduccion-style">
+      <formly-form model="produccioncompany" fields="vm.produccioncompanyFields" form="vm.productioncompanyForm" >
+         
+          <button type="submit" class="btn btn-success" ng-disabled="vm.productioncompanyForm.$invalid"> <i class="glyphicon glyphicon-ok"></i>Guardar</button>
+
+           <a class="btn btn-danger" href="/#!/produccioncompanies">
+                <i class="glyphicon glyphicon-remove"></i> Cancelar
+           </a>
+
+         
+      </formly-form>
+      </div>
+
+      
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+    </form>
+</div>
+  </div><!--fin contenedor-->
+
+
+
+
+
+   <div ng-hide="!myCheckView" class="fieldsetContainer" >
+    <hr style="width:100%; background-color: red;"><br>
+     <div class="col-md-12">
+        <form class="form-horizontal" >
+          <div   class="background-blue"  >
+            <h1>filtro de busqueda</h1>
+            
+            <div class="row">
+              <div class="col-sm-8 ">
+                <a class="navbar-brand background-blue">Tipo</a>
+              </div> 
+
+              <div class="col-sm-4 ">
+                <select class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" ng-model="myName" ng-options="x.name for x in names">
+                </select>
+              </div>
+            </div>
+
+
+           <div class="row">
+            <div class="col-sm-8 ">
+              <a class="navbar-brand background-blue">Fecha Desde</a>
+            </div>
+
+              <div class="col-sm-4 ">
+                <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchD" placeholder="Buscar Produccion" ng-model="from"/>
+              </div>
+            </div>
+
+         <div class="row">
+
+          <div class="col-sm-8 ">
+            <a class="navbar-brand background-blue">Fecha Hasta</a>
+          </div>
+
+          <div class="col-sm-4 ">
+            <input class="form-control pull-right" style="margin:7px 7px 0 0;width:150px" type="date" name="searchH" placeholder="Buscar Produccion" ng-model="to" ng-init="12/31/2030 | date"/>
+          </div>
+        </div>
+      </div>
+        </form>
+    </div>
+  </div>
+
+  <br>
+  
+  
+
+
+
+
+
+
+
+
+ 
+
+    <div>
+    <hr style="width:100%; background-color: red">
+        <table ng-table="tableParams" show-filter="false">
+            <tr ng-repeat="produccioncompany in $data | dateFilter:from:to | nameFilter:myName">
+                <td data-title="'Tipo'" sortable="'tipo'" filter="{ 'tipo': 'text' }">{{produccioncompany.tipo}}
+                </td>
+               
+                <td data-title="'Cantidad'" sortable="'cantidad_produccion'" filter="{ 'cantidad_produccion': 'text' }">{{produccioncompany.cantidad_produccion}}
+                </td>
+
+                <td data-title="'Genereo'" sortable="'genero'" filter="{ 'genero': 'text' }">{{produccioncompany.genero}}
+                </td>
+
+                <td data-title="'Tamaño'" sortable="'tamano'" filter="{ 'tamano': 'text' }">{{produccioncompany.tamano}}
+                </td>
+
+                <td data-title="'Fecha'" sortable="'created'" filter="{ 'created': 'text' }">{{produccioncompany.created | date: 'dd/MM/yyyy'}}
+                </td>
+                <td>
+                    <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/produccioncompanies/{{produccioncompany._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

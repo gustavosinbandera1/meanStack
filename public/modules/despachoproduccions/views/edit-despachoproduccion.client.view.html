@@ -1,0 +1,27 @@
+<section data-ng-controller="DespachoproduccionsController as vm" data-ng-init="toEditDespachoproduccion()">
+    <div class="page-header">
+        <h1>Edit Despachoproduccion</h1>
+    </div>
+    <div class="col-md-12 verproduccion-style">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate prevent-enter-submit>
+
+          <formly-form model="despachoproduccion" fields="vm.despachoFields" form="vm.despachoproduccionForm">
+    			</formly-form>
+
+          <hr/>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success" ng-disabled="vm.despachoproduccionForm.$invalid">
+                <i class="glyphicon glyphicon-ok"></i> Save
+              </button>
+              <a class="btn btn-danger" href="/#!/despachoproduccions">
+                <i class="glyphicon glyphicon-remove"></i> Cancel
+              </a>
+          </div>
+
+          <div data-ng-show="error" class="alert alert-danger form-group">
+            <strong data-ng-bind="error"></strong>
+          </div>
+
+        </form>
+    </div>
+</section>
